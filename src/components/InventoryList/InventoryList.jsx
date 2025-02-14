@@ -1,8 +1,10 @@
 // src/components/InventoryList/InventoryList.jsx
 
+import './InventoryList.css';
+
 const InventoryList = (props) => {
   return (
-    <div>
+    <div className="inventory-list">
       <h2>{props.title}</h2>
       <ul>
         {props.inventory.map((item) => (
@@ -15,7 +17,9 @@ const InventoryList = (props) => {
                 Add Item
               </button>
             ) : (
-              <button>Remove Item</button>
+              <button onClick={() => props.handleRemoveItem(item)}>
+                Remove Item
+              </button>
             )}
           </li>
         ))}
